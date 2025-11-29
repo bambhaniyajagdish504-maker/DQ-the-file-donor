@@ -16,12 +16,13 @@ Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
     SOURCE_TXT = "https://t.me/bambhaniya_jagdish_79\n<b>ɴᴏᴛᴇ:</b> Your note here"
 
 script = """
-• /filter - <code>Some command</code>
-• /del - <code>Another command</code>
+• /filter - <code>ADD A FILTER</code>
+• /filters - <code>LIST FILTERS</code>
+• /del - <code>DELETE FILTER</code>
+• /delall - <code>DELETE ALL FILTERS</code>
 
-- THIS BOT IS AN OPEN SOURCE PROJECT.
-"""
 - ꜱᴏᴜʀᴄᴇ - <a href="">ʜᴇʀᴇ</a>
+"""
 Dᴇᴠᴇʟᴏᴘᴇʀ:
 - <a href="https://t.me/bambhaniya_jagdish_79">Jᴏᴇʟ ᠰ TɢX</a></b>"""
 
