@@ -16,13 +16,14 @@ Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
     SOURCE_TXT = "https://t.me/bambhaniya_jagdish_79\n<b>ɴᴏᴛᴇ:</b> Your note here"
 
 script = """
-• /filter - <code>ADD A FILTER</code>
-• /filters - <code>LIST FILTERS</code>
-• /del - <code>DELETE FILTER</code>
-• /delall - <code>DELETE ALL FILTERS</code>
+• /filter - <code>ᴀᴅᴅ ᴀ ꜰɪʟᴛᴇʀ ɪɴ ᴀ ᴄʜᴀᴛ</code>
+• /filters - <code>ʟɪꜱᴛ ᴀʟʟ ᴛʜᴇ ꜰɪʟᴛᴇʀꜱ ᴏꜰ ᴀ ᴄʜᴀᴛ</code>
+• /del - <code>ᴅᴇʟᴇᴛᴇ ᴀ ꜱᴘᴇᴄɪꜰɪᴄ ꜰɪʟᴛᴇʀ ɪɴ ᴀ ᴄʜᴀᴛ</code>
+• /delall - <code>ᴅᴇʟᴇᴛᴇ ᴛʜᴇ ᴡʜᴏʟᴇ ꜰɪʟᴛᴇʀꜱ ɪɴ ᴀ ᴄʜᴀᴛ (ᴄʜᴀᴛ ᴏᴡɴᴇʀ ᴏɴʟʏ)</code>
 
-- ꜱᴏᴜʀᴄᴇ - <a href="">ʜᴇʀᴇ</a>
+Dᴇᴠᴇʟᴏᴘᴇʀ: Your Name Here
 """
+
 Dᴇᴠᴇʟᴏᴘᴇʀ:
 - <a href="https://t.me/bambhaniya_jagdish_79">Jᴏᴇʟ ᠰ TɢX</a></b>"""
 
