@@ -1,7 +1,7 @@
 import logging
 import logging.config
 
-# Get logging configurations
+# Logging Config
 logging.config.fileConfig('logging.conf')
 logging.getLogger().setLevel(logging.INFO)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
@@ -34,38 +34,57 @@ class Bot(Client):
         )
 
     async def start(self):
+        # Load banned users/chats
         b_users, b_chats = await db.get_banned()
         temp.BANNED_USERS = b_users
         temp.BANNED_CHATS = b_chats
+
         await super().start()
+
         await Media.ensure_indexes()
         await Media2.ensure_indexes()
-        #choose the right db by checking the free space
+
+        # DB Space check
         stats = await clientDB.command('dbStats')
-        #calculating the free db space from bytes to MB
-        free_dbSize = round(512-((stats['dataSize']/(1024*1024))+(stats['indexSize']/(1024*1024))), 2)
-        if SECONDDB_URI and free_dbSize<10: #if the primary db have less than 10MB left, use second DB.
+        free_dbSize = round(512 - ((stats['dataSize']/(1024*1024)) + (stats['indexSize']/(1024*1024))), 2)
+
+        if SECONDDB_URI and free_dbSize < 10:
             tempDict["indexDB"] = SECONDDB_URI
-            logging.info(f"Since Primary DB have only {free_dbSize} MB left, Secondary DB will be used to store datas.")
+            logging.info(f"Primary DB has only {free_dbSize} MB, using Secondary DB.")
         elif SECONDDB_URI is None:
-            logging.error("Missing second DB URI !\n\nAdd SECONDDB_URI now !\n\nExiting...")
+            logging.error("Missing SECONDDB_URI. Exiting!")
             exit()
         else:
-            logging.info(f"Since primary DB have enough space ({free_dbSize}MB) left, It will be used for storing datas.")
+            logging.info(f"Primary DB has enough space ({free_dbSize}MB).")
+
         await choose_mediaDB()
+
         me = await self.get_me()
         temp.ME = me.id
         temp.U_NAME = me.username
         temp.B_NAME = me.first_name
         self.username = '@' + me.username
-        logging.info(f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) started on {me.username}.")
+
+        logging.info(f"{me.first_name} running Pyrogram v{__version__} (Layer {layer}).")
         logging.info(LOG_STR)
         logging.info(script.LOGO)
+
+        # Prepare Restart Message
         tz = pytz.timezone('Asia/Kolkata')
         today = date.today()
         now = datetime.now(tz)
         time = now.strftime("%H:%M:%S %p")
-        await self.send_message(chat_id=LOG_CHANNEL, text=script.RESTART_TXT.format(today, time))
+
+        # Safe Logging to Log Channel
+        try:
+            log_channel_id = int(LOG_CHANNEL)
+            await self.send_message(
+                chat_id=log_channel_id,
+                text=script.RESTART_TXT.format(today, time)
+            )
+        except Exception as e:
+            logging.error(f"❌ Log Channel Error: {e}")
+            logging.warning("Bot is running, but unable to send log to LOG_CHANNEL.")
 
     async def stop(self, *args):
         await super().stop()
@@ -77,29 +96,7 @@ class Bot(Client):
         limit: int,
         offset: int = 0,
     ) -> Optional[AsyncGenerator["types.Message", None]]:
-        """Iterate through a chat sequentially.
-        This convenience method does the same as repeatedly calling :meth:`~pyrogram.Client.get_messages` in a loop, thus saving
-        you from the hassle of setting up boilerplate code. It is useful for getting the whole chat messages with a
-        single call.
-        Parameters:
-            chat_id (``int`` | ``str``):
-                Unique identifier (int) or username (str) of the target chat.
-                For your personal cloud (Saved Messages) you can simply use "me" or "self".
-                For a contact that exists in your Telegram address book you can use his phone number (str).
-                
-            limit (``int``):
-                Identifier of the last message to be returned.
-                
-            offset (``int``, *optional*):
-                Identifier of the first message to be returned.
-                Defaults to 0.
-        Returns:
-            ``Generator``: A generator yielding :obj:`~pyrogram.types.Message` objects.
-        Example:
-            .. code-block:: python
-                for message in app.iter_messages("pyrogram", 1, 15000):
-                    print(message.text)
-        """
+        
         current = offset
         while True:
             new_diff = min(200, limit - current)
