@@ -117,6 +117,10 @@ class Bot(Client):
                 yield message
                 current += 1
 
+import threading
+from app import start_web_server
+
+threading.Thread(target=start_web_server).start()
 
 app = Bot()
 app.run()
