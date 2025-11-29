@@ -36,7 +36,7 @@ MANUELFILTER_TXT = """ʜᴇʟᴘ: <b>ꜰɪʟᴛᴇʀꜱ</b>
 <b>Developer:</b> <a href="https://t.me/bambhaniya_jagdish_79">Jᴏᴇʟ ᠰ TɢX</a>
 """
 
-    BUTTON_TXT = """ʜᴇʟᴘ: <b>ʙᴜᴛᴛᴏɴꜱ</b>
+BUTTON_TXT = """ʜᴇʟᴘ: <b>ʙᴜᴛᴛᴏɴꜱ</b>
 
 <b>How to use buttons?</b>
 
