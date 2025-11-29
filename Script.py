@@ -48,25 +48,21 @@ You can add multiple buttons by separating them with new lines.
 <b>Developer:</b> <a href="https://t.me/bambhaniya_jagdish_79">Jᴏᴇʟ ᠰ TɢX</a>
 """
 
-    AUTOFILTER_TXT = """ʜᴇʟᴘ: <b>ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ</b>
+AUTOFILTER_TXT = """
+ʜᴇʟᴘ: <b>ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ</b>
 
-<b>Auto Filter Features:</b>
-• Auto Search On/Off
-• File Store Mode
-• IMDB Mode
-• Template Buttons Supported
-• Auto Filter Works in Group
+<b>My Features:</b>
+• Auto Filter System
+• Instant Search
+• Button Search
+• PM Search
+• Custom Caption Support
 
-To turn it on:
-<code>/autofilter on</code>
-
-To turn it off:
-<code>/autofilter off</code>
-
-<b>Developer:</b> <a href="https://t.me/bambhaniya_jagdish_79">Jᴏᴇʟ ᠰ TɢX</a>
+<b>Maintained By:</b>
+<a href="https://t.me/bambhaniya_jagdish_79">Jᴏᴇʟ ᠰ TɢX</a>
 """
 
-    CONNECTION_TXT = """ʜᴇʟᴘ: <b>ᴄᴏɴɴᴇᴄᴛɪᴏɴꜱ</b>
+CONNECTION_TXT = """ʜᴇʟᴘ: <b>ᴄᴏɴɴᴇᴄᴛɪᴏɴꜱ</b>
 - ᴜꜱᴇᴅ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ʙᴏᴛ ᴛᴏ ᴘᴍ ꜰᴏʀ ᴍᴀɴᴀɢɪɴɢ ꜰɪʟᴛᴇʀꜱ 
 - ɪᴛ ʜᴇʟᴘꜱ ᴛᴏ ᴀᴠᴏɪᴅ ꜱᴘᴀᴍᴍɪɴɢ ɪɴ ɢʀᴏᴜᴘꜱ.
 <b>ɴᴏᴛᴇ:</b>
