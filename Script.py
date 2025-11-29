@@ -23,7 +23,6 @@ script = """
 
 Dᴇᴠᴇʟᴏᴘᴇʀ: Your Name Here
 """
-
 Dᴇᴠᴇʟᴏᴘᴇʀ:
 - <a href="https://t.me/bambhaniya_jagdish_79">Jᴏᴇʟ ᠰ TɢX</a></b>"""
 
