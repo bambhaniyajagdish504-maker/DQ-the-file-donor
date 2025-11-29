@@ -2,7 +2,20 @@ import re
 from os import environ
 from Script import script 
 
-id_pattern = re.compile(r'^.\d+$')
+# FIXED Regex – only valid Telegram IDs (-100xxxxxxxxxx)
+id_pattern = re.compile(r"^-?\d+$")
+
+def clean_id(value):
+    """Return a safe integer ID or None"""
+    try:
+        value = value.strip()
+        if id_pattern.match(value):
+            return int(value)
+    except:
+        pass
+    return None
+
+
 def is_enabled(value, default):
     if value.lower() in ["true", "yes", "1", "enable", "y"]:
         return True
@@ -11,12 +24,35 @@ def is_enabled(value, default):
     else:
         return default
 
+
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '28855871'))
 API_HASH = environ.get("API_HASH", "95d9dc5b37e113ce3b1420a6f1eea1e1")
 BOT_TOKEN = environ.get("BOT_TOKEN", "")
 DATABASE_URI = environ.get("DATABASE_URI", "")
+
+# Log Channel — SAFE PARSING (MAIN FIX)
+_log_raw = environ.get('LOG_CHANNEL', '-1003492939742')
+LOG_CHANNEL = clean_id(_log_raw)
+if LOG_CHANNEL is None:
+    LOG_CHANNEL = -1003492939742   # fallback
+    print("⚠ Warning: LOG_CHANNEL invalid in environment, using default -1003492939742")
+
+
+# REPEAT-SAFE Channel Parsing everywhere else
+# Example:
+auth_channel = environ.get('AUTH_CHANNEL', '-1002342735355')
+AUTH_CHANNEL = [clean_id(auth_channel)] if clean_id(auth_channel) else []
+
+support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1002590436297')
+SUPPORT_CHAT_ID = clean_id(support_chat_id)
+
+reqst_channel = environ.get('REQST_CHANNEL_ID','-1002196570573')
+REQST_CHANNEL = clean_id(reqst_channel)
+
+# Other unchanged variables below...
+PICS = ...
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
