@@ -14,7 +14,13 @@ Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 ✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: v2.7.1 [ Sᴛᴀʙʟᴇ ]</b>"""
 
     SOURCE_TXT = "https://t.me/bambhaniya_jagdish_79\n<b>ɴᴏᴛᴇ:</b> Your note here"
-- ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴀɴ ᴏᴘᴇɴ ꜱᴏᴜʀᴄᴇ ᴘʀᴏᴊᴇᴄᴛ.
+
+script = """
+• /filter - <code>Some command</code>
+• /del - <code>Another command</code>
+
+- THIS BOT IS AN OPEN SOURCE PROJECT.
+"""
 - ꜱᴏᴜʀᴄᴇ - <a href="">ʜᴇʀᴇ</a>
 Dᴇᴠᴇʟᴏᴘᴇʀ:
 - <a href="https://t.me/bambhaniya_jagdish_79">Jᴏᴇʟ ᠰ TɢX</a></b>"""
