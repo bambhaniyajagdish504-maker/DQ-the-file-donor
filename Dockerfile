@@ -1,12 +1,12 @@
-FROM python:3.10.8-slim-buster
+FROM python:3.10-slim-bookworm
 
 RUN apt update && apt upgrade -y
 RUN apt install git -y
-COPY requirements.txt /requirements.txt
 
-RUN cd /
-RUN pip3 install -U pip && pip3 install -U -r requirements.txt
-RUN mkdir /DQTheFileDonor
-WORKDIR /DQTheFileDonor
-COPY start.sh /start.sh
-CMD ["/bin/bash", "/start.sh"]
+COPY requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt
+
+COPY . /app
+WORKDIR /app
+
+CMD ["python", "bot.py"]
