@@ -52,7 +52,6 @@ reqst_channel = environ.get('REQST_CHANNEL_ID','-1002196570573')
 REQST_CHANNEL = clean_id(reqst_channel)
 
 # Other unchanged variables below...
-PICS = ...
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
