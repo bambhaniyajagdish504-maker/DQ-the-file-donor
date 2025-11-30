@@ -1,9 +1,10 @@
-from aiohttp import web
+from flask import Flask
 
-async def health(request):
-    return web.Response(text="OK")
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "BOT IS RUNNING", 200
 
 def start_web_server():
-    app = web.Application()
-    app.router.add_get("/", health)
-    web.run_app(app, port=8000)
+    app.run(host="0.0.0.0", port=8000)
