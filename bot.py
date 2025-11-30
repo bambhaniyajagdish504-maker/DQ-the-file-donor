@@ -2,7 +2,8 @@ import os
 import logging
 import threading
 from pyrogram import Client, filters
-from app import start_web_server  
+from app import start_web_server
+start_web_server()  
 # health check server
 
 # --------------------
